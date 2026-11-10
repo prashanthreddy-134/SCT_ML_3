@@ -1,30 +1,32 @@
-# SCT_ML_3 – Cats vs Dogs Classification (Support Vector Machine)
+# SCT_ML_3: Cats vs Dogs Classification (Support Vector Machine)
 
-**Task:** Implement a support vector machine (SVM) to classify images of cats and dogs from the Kaggle dataset.
-**Dataset:** Dog/Cats Dataset (link in the internship brief).
+Task 3 of the SkillCraft Technology Machine Learning internship.
 
-## Setup
-```bash
-pip install -r requirements.txt
-```
-Unzip the dataset into `data/` so that cat and dog images sit in folders whose names start with `cat` or `dog`, for example `data/cats/` and `data/dogs/`. Sub-folders such as `train/` and `test/` are fine.
+**Goal:** classify images as cat or dog using a Support Vector Machine.
 
-## Run
-```bash
-python svm_cats_dogs.py --data data --max-per-class 1000
-python svm_cats_dogs.py --predict path/to/some_image.jpg
-```
+**Dataset:** Dogs vs. Cats. Images used: [number of images], split 80% train / 20% test. Each image is converted to grayscale, resized to 64×64, and described with HOG (histogram of oriented gradients) features.
 
 ## Method
-1. Collect images for both classes and sample up to `--max-per-class` from each.
-2. Convert to grayscale, resize to 64×64 and extract HOG (histogram of oriented gradients) features.
-3. Standardise the features and train an RBF-kernel `SVC` (80/20 stratified split).
-4. Report accuracy, precision, recall and the confusion matrix.
-
-## Outputs (`outputs/`)
-- `metrics.txt`: accuracy and classification report
-- `confusion_matrix.png`
-- `svm_cats_dogs.joblib`: trained model
+1. Load images and label them from their folder names (cats or dogs).
+2. Extract HOG features.
+3. Standardise the features and train an RBF-kernel `SVC` (`C=1.0`, `gamma="scale"`).
+4. Evaluate with accuracy, precision, recall and a confusion matrix.
 
 ## Results
-Test accuracy: ____
+| Metric | Value |
+|---|---|
+| Test accuracy | [value] |
+| Cat precision / recall | [value] / [value] |
+| Dog precision / recall | [value] / [value] |
+
+`outputs/confusion_matrix.png` shows where the model confuses the two classes.
+
+## How to run
+1. Open `SCT_ML_3.ipynb` in Google Colab.
+2. Upload the dataset zip and run the unzip and sorting cells in the notebook.
+3. Run all cells (Runtime → Run all).
+
+## Files
+- `SCT_ML_3.ipynb`: Colab notebook with the full run and outputs
+- `svm_cats_dogs.py`: the same code as a script
+- `outputs/`: metrics, confusion matrix and saved model
