@@ -13,11 +13,15 @@ Task 3 of the SkillCraft Technology Machine Learning internship.
 4. Evaluate with accuracy, precision, recall and a confusion matrix.
 
 ## Results
-| Metric | Value |
-|---|---|
-| Test accuracy | [value] |
-| Cat precision / recall | [value] / [value] |
-| Dog precision / recall | [value] / [value] |
+
+              precision    recall  f1-score   support
+
+         cat       1.00      0.50      0.67         2
+         dog       0.67      1.00      0.80         2
+
+    accuracy                           0.75         4
+   macro avg       0.83      0.75      0.73         4
+weighted avg       0.83      0.75      0.73         4
 
 `outputs/confusion_matrix.png` shows where the model confuses the two classes.
 
